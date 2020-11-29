@@ -1,0 +1,4 @@
+{
+    "error-with-status": "Ocorreu um erro {{statusCode}}",
+    "error-without-status": "Tivemos um erro"
+}
