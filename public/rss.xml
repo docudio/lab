@@ -1,0 +1,28 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Blog - Docudio</title>
+      <link>https://docudio.com/blog</link>
+      <description>Docudio's home page and blog. </description>
+      <language>en</language>
+      <lastBuildDate>Mon, 11 Jan 2021 12:00:00 GMT</lastBuildDate>
+      <atom:link href="https://docudio.com/rss.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://docudio.com/introducing-selfServices</guid>
+    <title>Welcome to selfServices by Docudio</title>
+    <link>https://docudio.com/blog/introducing-selfServices</link>
+    <description>An introduction to what selfService is about, how Docudio is closely tied to it, and how others can learn more about it.</description>
+    <pubDate>Mon, 11 Jan 2021 12:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://docudio.com/welcome-to-docudio</guid>
+    <title>Welcome to Docudio</title>
+    <link>https://docudio.com/blog/welcome-to-docudio</link>
+    <description>A short post welcoming people to the Docudio blog, and what we intend to share here in the future.</description>
+    <pubDate>Sun, 01 Nov 2020 12:00:00 GMT</pubDate>
+  </item>
+
+    </channel>
+  </rss>

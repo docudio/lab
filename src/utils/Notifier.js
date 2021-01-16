@@ -5,9 +5,9 @@ import { removeSnackbar } from '../actions'
 
 let displayed = []
 
-const Notifier = () => {
+export default function Notifier () {
   const dispatch = useDispatch()
-  const notifications = useSelector(store => store.common.notifications || [])
+  const notifications = useSelector(store => store.app.notifications || [])
   const { enqueueSnackbar, closeSnackbar } = useSnackbar()
 
   const storeDisplayed = (id) => {
@@ -69,5 +69,3 @@ const Notifier = () => {
 
   return null
 }
-
-export default Notifier
