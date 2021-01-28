@@ -37,9 +37,6 @@ import { loadApp } from '../actions'
 import DarkModeToggle from '../utils/DarkModeToggle'
 
 function WrappedApp (props) {
-  const { Component, pageProps } = props
-  const router = useRouter()
-
   return (
     <Provider store={store}>
       <RootPage {...props} />
@@ -50,7 +47,7 @@ function WrappedApp (props) {
 
 function RootPage (props) {
   const { Component, pageProps, width } = props
-  const [open, setOpen] = React.useState(!(width == 'xs' || width == 'sm'))
+  const [open, setOpen] = React.useState(!(width === 'xs' || width === 'sm'))
   const drawerWidth = React.useMemo(
     () =>
       open ? 240 : 0,
@@ -185,7 +182,7 @@ function RootPage (props) {
             <AppBar position='fixed' className={classes.appBar}>
               <Toolbar>
 
-      <Grid
+                <Grid
                   container direction='row'
                   spacing={4}
                 >
@@ -195,7 +192,6 @@ function RootPage (props) {
                       aria-label='open drawer'
                       onClick={handleDrawerOpen}
                       edge='start'
-                      className={clsx(classes.menuButton, open && classes.hide)}
                     >
                       <MenuIcon />
                     </IconButton>
@@ -207,12 +203,12 @@ function RootPage (props) {
                       <Button
                         size='large' className={classes.large} startIcon={
                           <Link
-    href='/'
-  >
+                            href='/'
+                          >
 
-    <Avatar className={classes.large} src='/logo2.png' />
+                            <Avatar className={classes.large} src='/logo2.png' />
 
-  </Link>
+                          </Link>
                       } variant='contained' color='primary'
                       >
 
@@ -221,7 +217,7 @@ function RootPage (props) {
                           href='/'
 
                         >
-                          <Typography variant='h4'> Docudio</Typography>
+                          <Typography variant='h4'> SelfServices</Typography>
                         </Link>
                       </Button>         {/*  <LegacysiteLink /><LoginButton /> */}
 
@@ -231,42 +227,42 @@ function RootPage (props) {
                   <Hidden mdUp>
 
                     <Grid item xl={6} xs={7} sm={6} md={6} lg={6}>
-                      <Link
+            <Link
                         activeClassName='Mui-selected'
                         href='/'
 
                       >
                         <Typography variant='h4'> DOCUDIO</Typography>
                       </Link>
-                    </Grid>
+          </Grid>
                   </Hidden>
 
                   <Hidden xsDown>
 
                     <Grid item xl={4} xs={false} sm={2} md={2} lg={4}>
-                      <DarkModeToggle />
-                    </Grid>
+            <DarkModeToggle />
+          </Grid>
                   </Hidden>
 
                 </Grid>
 
-    </Toolbar>
+              </Toolbar>
             </AppBar>
 
             <Drawer
               variant='persistent'
               open={open}
               classes={{
-      paper: classes.drawerPaper
-    }}
+                paper: classes.drawerPaper
+              }}
               className={classes.drawer}
             >
               <div className={classes.toolbar} />
               <div className={classes.drawerHeader}>
-      <IconButton onClick={handleDrawerClose}>
+                <IconButton onClick={handleDrawerClose}>
                   <ChevronLeftIcon />
                 </IconButton>
-    </div>
+              </div>
               <PageLinks handleDrawerClose={width === 'xs' || width === 'sm' ? handleDrawerClose : undefined} />
               <Divider />
             </Drawer>
@@ -274,12 +270,12 @@ function RootPage (props) {
             <main className={classes.content}>
               <Container className={classes.body} maxWidth={false}>
 
-      <Component {...pageProps} />
-      <Notifier />
+                <Component {...pageProps} />
+                <Notifier />
 
-      <Footer />
+                <Footer />
 
-    </Container>
+              </Container>
 
             </main>
 
