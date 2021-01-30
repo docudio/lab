@@ -94,7 +94,7 @@ function Footer ({ t }) {
             <Typography style={{ paddingLeft: '5px' }} variant='body1'>
               <Link
                 activeClassName='Mui-selected'
-                href='/products/docudio'
+                href='https://www.docudio.com/products/docudio'
                 passHref
 
               >

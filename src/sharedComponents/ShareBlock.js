@@ -17,15 +17,15 @@ const ShareBlock = props => {
 
   return (
 
-    <Grid container alignContent={props.left ? '' : 'center'} justify={props.left ? '' : 'center'} direction='row'
+    <Grid container alignContent={props.left ? 'flex-start' : 'center'} justify={props.left ? 'flex-start' : 'center'} direction='row'
       spacing={0} >
 
-      {buttons.map(button => {
+      {buttons.map((button,index) => {
         const { network, icon: Icon, ...buttonRest } = button
         const rest = { ...blockRest, ...buttonRest }
 
         return (
-          <Grid item xl='auto' xs='3' sm='3' md='auto' lg='auto' >
+          <Grid item xl='auto' xs={3} sm={3} md='auto' lg='auto' key={index} >
             <Button
               key={network}
               network={network}

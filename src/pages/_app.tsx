@@ -145,7 +145,7 @@ function RootPage (props) {
         palette: {
           type: ThemePreference === true ? 'dark' : 'light',
           primary: { main: '#000000' },
-          secondary: { main: '#dbdbdb' }
+          secondary: { main: '#aa1111' }
         },
         typography: { fontFamily: ['Montserrat'].join(',') }
 
@@ -217,7 +217,7 @@ function RootPage (props) {
                           href='/'
 
                         >
-                          <Typography variant='h4'> SelfServices</Typography>
+                          <Typography variant='h5'> Docudio Lab</Typography>
                         </Link>
                       </Button>         {/*  <LegacysiteLink /><LoginButton /> */}
 
@@ -232,7 +232,7 @@ function RootPage (props) {
                         href='/'
 
                       >
-                        <Typography variant='h4'> DOCUDIO</Typography>
+                        <Typography variant='h4'> Docudio Lab</Typography>
                       </Link>
           </Grid>
                   </Hidden>

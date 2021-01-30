@@ -2,7 +2,6 @@ import { Box, Button, Grid, makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite'
 import { useDispatch } from 'react-redux'
-import { withTranslation } from '../i18n'
 
 const useStyles = makeStyles(() => ({
   logo: {
@@ -14,8 +13,9 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-function Home () {
+export default function Introduction () {
   const classes = useStyles()
+  const dispatch = useDispatch()
 
   return (
     <Box paddingTop='100px' paddingBottom='100px' paddingRight='24px' paddingLeft='24px' marginLeft='auto' marginRight='auto'>
@@ -30,7 +30,7 @@ function Home () {
           </Box>
           <Box mt='12px'>
             <Typography variant='body1' color='textSecondary'>
-              Check out our blog, visit our github to see what we are doing, or visit our main Docudio site to get more info on what we do!
+              Check out our blog or visit our main Docudio site to get more info on what we do!
             </Typography>
           </Box>
           <Box mt='24px'>
@@ -55,7 +55,3 @@ function Home () {
     </Box>
   )
 }
-Home.getInitialProps = async () => ({
-  namespacesRequired: ['index']
-})
-export default withTranslation('index')(Home)

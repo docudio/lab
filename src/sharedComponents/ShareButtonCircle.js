@@ -1,4 +1,4 @@
-import { cx, css } from 'emotion'
+import { cx, css } from '@emotion/css'
 import PropTypes from 'prop-types'
 import React from 'react'
 

@@ -45,10 +45,6 @@ function PageLinks (props) {
           <Paper elevation={0}>
             <List aria-label='navigation'>
               <ListItemLink handleDrawerClose={props.handleDrawerClose} to='/' primary={t('Home')} icon={<HomeIcon />} />
-              <ListItemLink handleDrawerClose={props.handleDrawerClose} to='/start' primary={t('Get Started')} icon={<PlayCircleOutlineIcon />} />
-              <ListItemLink handleDrawerClose={props.handleDrawerClose} to='/docs' primary={t('Docs')} icon={<BookIcon />} />
-              <ListItemLink handleDrawerClose={props.handleDrawerClose} to='/reachout' primary={t('Talk with Us!')} icon={<ChatIcon />} />
-              <ListItemLink handleDrawerClose={props.handleDrawerClose} to='/cloud/as-a-service' primary={t('Cloud')} icon={<CloudIcon />} />
               <CollapsedNavigation handleDrawerClose={props.handleDrawerClose} heading={t('Resources')} headingIcon={<AppsIcon />} routes={resourceRoutes} />
             </List>
           </Paper>
@@ -97,11 +93,6 @@ function CollapsedNavigation (props) {
 }
 
 const resourceRoutes = [
-  {
-    path: '/docudio/examples',
-    name: 'Examples',
-    icon: () => <PublicIcon />
-  },
   {
     path: '/blog',
     name: 'Blog',
