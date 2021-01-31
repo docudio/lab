@@ -25,7 +25,7 @@ const styles = css`
 `
 
 const ShareBlockStandard = props => {
-  const { header = '', className = '' } = props
+  const { header = '', className = '', left } = props
 
   return (
     <div className={cx(styles, className)}>

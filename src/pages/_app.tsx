@@ -1,8 +1,4 @@
 import React, { useEffect } from 'react'
-import combineReducers from '../reducers/reducer'
-import { createStore, applyMiddleware, compose } from 'redux'
-import createSagaMiddleware from 'redux-saga'
-import rootSaga from '../sagas/root-saga'
 import Link from 'next/link'
 import { SnackbarProvider } from 'notistack'
 import Footer from '../sharedComponents/footer'
@@ -16,7 +12,6 @@ import { useRouter } from 'next/router'
 // import apm from '../utils/rum'
 import '../utils/App.css'
 import { i18n, appWithTranslation } from '../i18n'
-import Head from 'next/head'
 import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles'
 import { useSelector, useDispatch, Provider } from 'react-redux'
 import Drawer from '@material-ui/core/Drawer'
@@ -26,7 +21,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import store from '../store'
-
+import type { DefaultRootState } from "../store";
 import { Grid, IconButton, CssBaseline, Button, Avatar, useTheme, useMediaQuery } from '@material-ui/core'
 import clsx from 'clsx'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -138,7 +133,7 @@ function RootPage (props) {
     }
   }, [dispatch, appLoaded, router])
 
-  const ThemePreference = useSelector(state => state.theme.preferred)
+  const ThemePreference = useSelector((state: DefaultRootState) => state.theme.preferred)
   const theme = React.useMemo(
     () =>
       createMuiTheme({
@@ -156,7 +151,7 @@ function RootPage (props) {
 
   const matches = useMediaQuery(themeHook.breakpoints.up('sm'))
 
-  const notistackRef = React.createRef()
+  const notistackRef: any = React.createRef()
   const onClickDismiss = key => () => {
     notistackRef.current.closeSnackbar(key)
   }
@@ -213,7 +208,7 @@ function RootPage (props) {
                       >
 
                         <Link
-                          activeClassName='Mui-selected'
+                          
                           href='/'
 
                         >
@@ -228,7 +223,6 @@ function RootPage (props) {
 
                     <Grid item xl={6} xs={7} sm={6} md={6} lg={6}>
             <Link
-                        activeClassName='Mui-selected'
                         href='/'
 
                       >
@@ -258,7 +252,7 @@ function RootPage (props) {
               className={classes.drawer}
             >
               <div className={classes.toolbar} />
-              <div className={classes.drawerHeader}>
+              <div >
                 <IconButton onClick={handleDrawerClose}>
                   <ChevronLeftIcon />
                 </IconButton>

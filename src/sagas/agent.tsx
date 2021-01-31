@@ -46,7 +46,7 @@ function handleResponsenonJson (response) {
         })
         const contentType = response.headers.get('content-type')
         if (contentType && contentType.indexOf('application/json') !== -1) {
-          error = { ...error, text }
+          error = { ...error }
         }
         return Promise.reject(error)
       }

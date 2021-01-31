@@ -14,7 +14,7 @@ import DocDivider from '../../utils/DocDivider'
 import DateFormatter from '../../utils/dateFormatter'
 // import Image from '/blogheader.png'; // Import using relative path
 import generateRss from '../../lib/rss'
-import Post from './types/Post'
+import Post from '../../lib/types/Post'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -55,14 +55,22 @@ export default function blogIndex ({ posts }) {
       { network: 'Linkedin', icon: LinkedInIcon }
     ],
     text: 'Checkout this blog Post!',
+    left: true,
+    noColor: true,
     longtext: 'This Docudio blog post is awesome, check it out!'
   }
 
   return (
     <Card className={classes.root}>
       {/*   <CardHeader title={t('cardtitle')} /> */}
-      <CardHeader action={ <Button onClick={() => router.push('/rss.xml')} ariant='outlined' style={{ float: 'right' }} color='primary'>
-         RSS </Button> }/>
+      <CardHeader action2={ <>
+        <Button onClick={() => router.push('/rss.xml')} 
+          variant='outlined' 
+          style={{ float: 'right' }} 
+          color='primary'>
+          RSS 
+        </Button> </>
+        }/>
 
       <CardContent>
 
@@ -71,7 +79,6 @@ export default function blogIndex ({ posts }) {
         </Typography> */}
         <DocDivider />
         <Link
-          activeClassName='Mui-selected'
           href={`/blog/${heroPost.slug}`}
           passHref
 
@@ -89,7 +96,7 @@ export default function blogIndex ({ posts }) {
 By: {heroPost.author.name}</Typography>
             <Typography variant='body2' >
 Share</Typography>
-            <ShareBlockStandard left noColor {...shareBlockProps} />
+            <ShareBlockStandard left={true} noColor {...shareBlockProps} />
 
             {/*  <div className={classes.paperContainer}>
                 Some text to fill the Paper Component
@@ -103,7 +110,7 @@ Share</Typography>
         <Grid container direction='row'
           spacing={4} >
 
-          { morePosts.map((item: Post , index: Dict) => {
+          { morePosts.map((item: Post , index: object) => {
             return (
               <Grid item xl={4} xs={12} sm={12} md={6} lg={4} >
 
@@ -115,7 +122,6 @@ Share</Typography>
                       </Typography>
                       <Typography gutterBottom variant='h5' component='h2'>
                         <Link
-                          activeClassName='Mui-selected'
                           href={`/blog/${item.slug}`}
                           passHref
 
@@ -135,7 +141,6 @@ Share</Typography>
                   </CardActionArea>
                   <CardActions>
                     <Link
-                      activeClassName='Mui-selected'
                       href={`/blog/${item.slug}`}
                       passHref
 
@@ -159,7 +164,7 @@ Share</Typography>
 }
 
 export async function getStaticProps ({ params, locale }) {
-  const allPosts: Array<Post> = getAllPosts(locale, [
+  const allPosts: object = getAllPosts(locale, [
     'title',
     'date',
     'slug',

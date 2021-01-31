@@ -7,6 +7,7 @@ import { Grid } from '@material-ui/core'
 const ShareBlock = props => {
   const {
     url,
+    left,
     button: Button = ShareButton,
     buttons,
     className,

@@ -1,5 +1,5 @@
-import Post from '../pages/blog/types/Post'
-const generateRssItem = (post: Post): string => `
+import Post from './types/Post'
+const generateRssItem = (post: any): string => `
   <item>
     <guid>https://docudio.com/${post.slug}</guid>
     <title>${post.title}</title>
@@ -9,7 +9,7 @@ const generateRssItem = (post: Post): string => `
   </item>
 `
 
-const generateRss = (posts: Post[]): string => `
+const generateRss = (posts: any): string => `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>Blog - Docudio</title>
