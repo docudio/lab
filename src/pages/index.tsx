@@ -18,6 +18,7 @@ function Home () {
   const classes = useStyles()
 
   return (
+    <>
     <Box paddingTop='100px' paddingBottom='100px' paddingRight='24px' paddingLeft='24px' marginLeft='auto' marginRight='auto'>
       <Grid container spacing={3}>
         <Grid xs={12} md={5} item>
@@ -53,6 +54,7 @@ function Home () {
         </Grid>
       </Grid>
     </Box>
+    </>
   )
 }
 Home.getInitialProps = async () => ({

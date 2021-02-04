@@ -45,7 +45,7 @@ function RootPage (props) {
   const [open, setOpen] = React.useState(!(width === 'xs' || width === 'sm'))
   const drawerWidth = React.useMemo(
     () =>
-      open ? 240 : 0,
+      open ? (width == 'xs' || width == 'sm') ? 120: 240 : 0,
     [open]
   )
 
@@ -72,7 +72,8 @@ function RootPage (props) {
     // width: drawerWidth
     },
     content: {
-      flexGrow: 1
+      flexGrow: 1,
+      width: '100%'
     },
     body: {
       display: 'flex',
@@ -226,7 +227,7 @@ function RootPage (props) {
                         href='/'
 
                       >
-                        <Typography variant='h4'> Docudio Lab</Typography>
+                        <Typography variant='h5'> Docudio Lab</Typography>
                       </Link>
           </Grid>
                   </Hidden>
@@ -246,10 +247,6 @@ function RootPage (props) {
             <Drawer
               variant='persistent'
               open={open}
-              classes={{
-                paper: classes.drawerPaper
-              }}
-              className={classes.drawer}
             >
               <div className={classes.toolbar} />
               <div >
@@ -262,7 +259,7 @@ function RootPage (props) {
             </Drawer>
 
             <main className={classes.content}>
-              <Container className={classes.body} maxWidth={false}>
+              <Container fixed>
 
                 <Component {...pageProps} />
                 <Notifier />
